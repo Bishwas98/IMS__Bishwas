@@ -90,7 +90,7 @@ class employeeClass:
         Button_Save= Button(self.root,text="Save",command=self.add,font=("goudy old style",12),background="#2196f3",foreground="white",cursor="hand2",padx=2).place(x=380,y=305,width=110,height=25) 
         Button_Update= Button(self.root,text="Update",command=self.update, font=("goudy old style",12),background="#4caf50",foreground="white",cursor="hand2",padx=2).place(x=500,y=305,width=110,height=25)
         Button_Delete= Button(self.root,text="Delete",command=self.delete,font=("goudy old style",12),background="#f44336",foreground="white",cursor="hand2",padx=2).place(x=620,y=305,width=110,height=25)
-        Button_Clear= Button(self.root,text="Clear",command=self.Clear,font=("goudy old style",12),background="#607d8b",foreground="white",cursor="hand2",padx=2).place(x=740,y=305,width=110,height=25)
+        Button_Clear= Button(self.root,text="Clear",command=self.clear,font=("goudy old style",12),background="#607d8b",foreground="white",cursor="hand2",padx=2).place(x=740,y=305,width=110,height=25)
 
         #---Employee Details TreeView ---#
 
@@ -252,7 +252,7 @@ class employeeClass:
         except Exception as ex:
             messagebox.showerror("Error",f"Error due to: {str(ex)}",parent=self.root)
     
-    def Clear(self):
+    def clear(self):
         self.var_Employee_Id.set("")
         self.var_Name.set("")
         self.var_Email.set("")

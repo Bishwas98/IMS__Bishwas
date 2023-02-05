@@ -3,6 +3,7 @@ from PIL import Image, ImageTk     #-- PIP instal Pillow for image ralated files
 from employee import employeeClass
 from supplier import supplierclass
 from category import categoryclass
+from product import productClass
 class IMS:
     def __init__(self,root):
         self.root = root
@@ -43,7 +44,7 @@ class IMS:
         Button_Employee= Button(LeftMenu,text="Employee",command=self.employee,image=self.Icon,compound=LEFT,padx=5,anchor="w",font=("times new roman",20),background="#1A76D7",bd=3,cursor="hand1").pack(side=TOP,fill=X)
         Button_Supplier= Button(LeftMenu,text="Supplier",command=self.supplier, image=self.Icon,compound=LEFT,padx=5,anchor="w",font=("times new roman",20),background="#1A76D7",bd=3,cursor="hand1").pack(side=TOP,fill=X)
         Button_Category= Button(LeftMenu,text="Category",command=self.category,image=self.Icon,compound=LEFT,padx=5,anchor="w",font=("times new roman",20),background="#1A76D7",bd=3,cursor="hand1").pack(side=TOP,fill=X)
-        Button_Product= Button(LeftMenu,text="Product",image=self.Icon,compound=LEFT,padx=5,anchor="w",font=("times new roman",20),background="#1A76D7",bd=3,cursor="hand1").pack(side=TOP,fill=X)
+        Button_Product= Button(LeftMenu,text="Product",command=self.product,image=self.Icon,compound=LEFT,padx=5,anchor="w",font=("times new roman",20),background="#1A76D7",bd=3,cursor="hand1").pack(side=TOP,fill=X)
         Button_Sales= Button(LeftMenu,text="Sales",image=self.Icon,compound=LEFT,padx=5,anchor="w",font=("times new roman",20),background="#1A76D7",bd=3,cursor="hand1").pack(side=TOP,fill=X)
         Button_Exit= Button(LeftMenu,text="Exit",image=self.Icon,compound=LEFT,padx=5,anchor="w",font=("times new roman",20),background="#1A76D7",bd=3,cursor="hand1").pack(side=TOP,fill=X)
         #---Content---#
@@ -69,7 +70,7 @@ class IMS:
     #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     def employee(self):
         self.new_win = Toplevel(self.root)
-        self.new_obj=employeeClass(self.new_win)
+        self.new_obj=  employeeClass(self.new_win)
 
     def supplier(self):
         self.new_win = Toplevel(self.root)
@@ -77,7 +78,11 @@ class IMS:
 
     def category(self):
         self.new_win = Toplevel(self.root)
-        self.new_obj = categoryclass(self.new_win)        
+        self.new_obj = categoryclass(self.new_win)  
+
+    def product(self):
+        self.new_obj = Toplevel(self.root)
+        self.new_obj = productClass(self.new_win)          
 
 if __name__ =="__main__":
     root=Tk()
